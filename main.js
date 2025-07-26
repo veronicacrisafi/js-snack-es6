@@ -49,4 +49,54 @@ Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0
 Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.*/
 
-// inter: punti 81 - 394 falli subiti / napoli: 82 punti falli 385/ atalanta: 74 punti 414 /juventus: punti 70 453/ Lazio: punti 65 404
+const squadreCalcio = [
+  {
+    name: "Inter",
+    puntiFatti: getRandomNumber(0, 500),
+    falliSubiti: getRandomNumber(0, 500),
+  },
+
+  {
+    name: "Napoli",
+    puntiFatti: getRandomNumber(0, 500),
+    falliSubiti: getRandomNumber(0, 500),
+  },
+  {
+    name: "Atalanta",
+    puntiFatti: getRandomNumber(0, 500),
+    falliSubiti: getRandomNumber(0, 500),
+  },
+  {
+    name: "Juventus",
+    puntiFatti: getRandomNumber(0, 500),
+    falliSubiti: getRandomNumber(0, 500),
+  },
+  {
+    name: "Lazio",
+    puntiFatti: getRandomNumber(0, 500),
+    falliSubiti: getRandomNumber(0, 500),
+  },
+];
+
+for (let key in squadreCalcio) {
+  console.log(squadreCalcio[key]);
+}
+
+let newArraySquad = [];
+for (let i = 0; i < squadreCalcio.length; i++) {
+  const squadra = squadreCalcio[i];
+  const newSquadra = {
+    name: squadra.name,
+    falliSubiti: squadra.falliSubiti,
+  };
+  newArraySquad.push(newSquadra);
+
+  console.log(newArraySquad);
+  document.writeln(
+    `La squadra ${squadra.name} ha subito ${squadra.falliSubiti} falli `
+  );
+}
+
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}

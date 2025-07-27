@@ -82,19 +82,30 @@ for (let key in squadreCalcio) {
   console.log(squadreCalcio[key]);
 }
 
+//uso una variabile di appoggio let
 let newArraySquad = [];
+//creo un ul (nodo genitore) con la dot notation .creatElement in modo dinamico in js
+const ul = document.createElement("ul");
+//all'HTML nel body vado a inserire con appendChild la mia ul in modo tale da poterla vedere in pagina
+document.body.appendChild(ul);
+
+//vado con il ciclo for a leggere ciò che c'è all'interno dell'oggetto squadreCalcio partendo da 0 ed andando ad incrementare di 1 alla volta
 for (let i = 0; i < squadreCalcio.length; i++) {
   const squadra = squadreCalcio[i];
+
+  // Creo un nuovo oggetto che deve contenere solo la squadra e i falliSubiti e lo aggiungo all'array tramite la dot notation .push
   const newSquadra = {
     name: squadra.name,
     falliSubiti: squadra.falliSubiti,
   };
   newArraySquad.push(newSquadra);
 
-  console.log(newArraySquad);
-  document.writeln(
-    `La squadra ${squadra.name} ha subito ${squadra.falliSubiti} falli `
-  );
+  // Creo un elemento li (figlio del nodo genitore ul) per ogni squadra
+  const li = document.createElement("li");
+  //creo un testo per ogni elemento della li con le chiavi/valori che voglio vedere in pagina
+  li.textContent = `La squadra ${squadra.name} ha subito ${squadra.falliSubiti} falli`;
+  //nell'ul(genitore) vado a mettere gli li (figli) all'interno della lista creata all'inizio newArraySquad
+  ul.appendChild(li);
 }
 
 function getRandomNumber(min, max) {

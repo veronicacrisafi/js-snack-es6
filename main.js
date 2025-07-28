@@ -89,22 +89,24 @@ const ul = document.createElement("ul");
 //all'HTML nel body vado a inserire con appendChild la mia ul in modo tale da poterla vedere in pagina
 document.body.appendChild(ul);
 
+for (let i = 0; i < squadreCalcio.length; i++) {
+  squadreCalcio[i].puntiFatti = getRandomNumber(0, 500);
+  squadreCalcio[i].falliSubiti = getRandomNumber(0, 500);
+}
 //vado con il ciclo for a leggere ciò che c'è all'interno dell'oggetto squadreCalcio partendo da 0 ed andando ad incrementare di 1 alla volta
 for (let i = 0; i < squadreCalcio.length; i++) {
   const squadra = squadreCalcio[i];
-
   // Creo un nuovo oggetto che deve contenere solo la squadra e i falliSubiti e lo aggiungo all'array tramite la dot notation .push
-  const falli = getRandomNumber(0, 500);
   const newSquadra = {
     name: squadra.name,
-    falliSubiti: falli,
+    falliSubiti: squadra.falliSubiti,
   };
   newArraySquad.push(newSquadra);
 
   // Creo un elemento li (figlio del nodo genitore ul) per ogni squadra
   const li = document.createElement("li");
   //creo un testo per ogni elemento della li con le chiavi/valori che voglio vedere in pagina
-  li.textContent = `La squadra ${squadra.name} ha subito ${falli} falli`;
+  li.textContent = `La squadra ${squadra.name} ha subito ${squadra.falliSubiti} falli`;
   //nell'ul(genitore) vado a mettere gli li (figli) all'interno della lista creata all'inizio newArraySquad
   ul.appendChild(li);
 }

@@ -48,33 +48,33 @@ Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
 Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.*/
-
+let random = getRandomNumber(0, 500);
 const squadreCalcio = [
   {
     name: "Inter",
-    puntiFatti: getRandomNumber(0, 500),
-    falliSubiti: getRandomNumber(0, 500),
+    puntiFatti: random,
+    falliSubiti: random,
   },
 
   {
     name: "Napoli",
-    puntiFatti: getRandomNumber(0, 500),
-    falliSubiti: getRandomNumber(0, 500),
+    puntiFatti: random,
+    falliSubiti: random,
   },
   {
     name: "Atalanta",
-    puntiFatti: getRandomNumber(0, 500),
-    falliSubiti: getRandomNumber(0, 500),
+    puntiFatti: random,
+    falliSubiti: random,
   },
   {
     name: "Juventus",
-    puntiFatti: getRandomNumber(0, 500),
-    falliSubiti: getRandomNumber(0, 500),
+    puntiFatti: random,
+    falliSubiti: random,
   },
   {
     name: "Lazio",
-    puntiFatti: getRandomNumber(0, 500),
-    falliSubiti: getRandomNumber(0, 500),
+    puntiFatti: random,
+    falliSubiti: random,
   },
 ];
 

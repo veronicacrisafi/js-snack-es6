@@ -48,39 +48,39 @@ Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
 Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.*/
-let random = getRandomNumber(0, 500);
+
 const squadreCalcio = [
   {
     name: "Inter",
-    puntiFatti: random,
-    falliSubiti: random,
+    puntiFatti: "",
+    falliSubiti: "",
   },
 
   {
     name: "Napoli",
-    puntiFatti: random,
-    falliSubiti: random,
+    puntiFatti: "",
+    falliSubiti: "",
   },
   {
     name: "Atalanta",
-    puntiFatti: random,
-    falliSubiti: random,
+    puntiFatti: "",
+    falliSubiti: "",
   },
   {
     name: "Juventus",
-    puntiFatti: random,
-    falliSubiti: random,
+    puntiFatti: "",
+    falliSubiti: "",
   },
   {
     name: "Lazio",
-    puntiFatti: random,
-    falliSubiti: random,
+    puntiFatti: "",
+    falliSubiti: "",
   },
 ];
 
-for (let key in squadreCalcio) {
+/*for (let key in squadreCalcio) {
   console.log(squadreCalcio[key]);
-}
+}*/
 
 //uso una variabile di appoggio let
 let newArraySquad = [];
@@ -94,16 +94,17 @@ for (let i = 0; i < squadreCalcio.length; i++) {
   const squadra = squadreCalcio[i];
 
   // Creo un nuovo oggetto che deve contenere solo la squadra e i falliSubiti e lo aggiungo all'array tramite la dot notation .push
+  const falli = getRandomNumber(0, 500);
   const newSquadra = {
     name: squadra.name,
-    falliSubiti: squadra.falliSubiti,
+    falliSubiti: falli,
   };
   newArraySquad.push(newSquadra);
 
   // Creo un elemento li (figlio del nodo genitore ul) per ogni squadra
   const li = document.createElement("li");
   //creo un testo per ogni elemento della li con le chiavi/valori che voglio vedere in pagina
-  li.textContent = `La squadra ${squadra.name} ha subito ${squadra.falliSubiti} falli`;
+  li.textContent = `La squadra ${squadra.name} ha subito ${falli} falli`;
   //nell'ul(genitore) vado a mettere gli li (figli) all'interno della lista creata all'inizio newArraySquad
   ul.appendChild(li);
 }
